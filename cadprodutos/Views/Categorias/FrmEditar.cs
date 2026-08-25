@@ -10,22 +10,29 @@ using System.Windows.Forms;
 
 namespace cadprodutos.Views.Categorias
 {
-    public partial class FrmCadastrar : Form
+    public partial class FrmEditar : Form
     {
         CategoriaPresenter presenter;
-        public FrmCadastrar(CategoriaPresenter presenter)
+        Categoria cat;
+        public FrmEditar(CategoriaPresenter presenter, Categoria cat)
         {
             InitializeComponent();
             this.presenter = presenter;
+            this.cat = cat;
+
+            lblID.Text = $"#{cat.Id}";
+            txtNome.Text = cat.Nome;
+
+            foreach (Produto p in cat.Produtos)
+            {
+
+            }
         }
 
-        private void btsalvar_Click(object sender, EventArgs e)
+        private void btSalvar_Click(object sender, EventArgs e)
         {
-            Categoria nova = new Categoria()
-            {
-                Nome = txtNome.Text
-            };
-            if (presenter.Cadastrar(nova))
+            cat.Nome = txtNome.Text;
+            if(presenter.Editar(cat))
             {
                 MessageBox.Show("Sucesso!");
                 Close();

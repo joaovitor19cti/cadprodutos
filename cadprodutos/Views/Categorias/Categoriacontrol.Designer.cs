@@ -43,6 +43,7 @@
             bteditar.TabIndex = 0;
             bteditar.Text = "Editar";
             bteditar.UseVisualStyleBackColor = true;
+            bteditar.Click += bteditar_Click;
             // 
             // btexcluir
             // 
@@ -53,6 +54,7 @@
             btexcluir.TabIndex = 1;
             btexcluir.Text = "Excluir";
             btexcluir.UseVisualStyleBackColor = true;
+            btexcluir.Click += btexcluir_Click;
             // 
             // lblid
             // 

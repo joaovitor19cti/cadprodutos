@@ -13,7 +13,7 @@ namespace cadprodutos.Data
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseNpgsql("Host=projetoscti.com.br;" +
                                      "Port=54432;" + 
-                                     "Username=ra2557096" +
+                                     "Username=ra2557096;" +
                                      "Password=FVzmSDYwur9KAtko;" +
                                      "Database=cti_db;");
         }

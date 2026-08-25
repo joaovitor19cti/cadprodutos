@@ -24,19 +24,26 @@ namespace cadprodutos.Views.Categorias
 
         private void btbuscar_Click(object sender, EventArgs e)
         {
+            Atualizar();
+        }
+
+        public void Atualizar()
+        {
             List<Categoria> lista = Presenter.Buscar(txtbusca.Text);
 
             flpItens.Controls.Clear();
             foreach (Categoria c in lista)
             {
-                Categoriacontrol ctr = new Categoriacontrol(c);
+                Categoriacontrol ctr = new Categoriacontrol(this, Presenter, c);
                 flpItens.Controls.Add(ctr);
             }
         }
 
         private void btcadastrar_Click(object sender, EventArgs e)
         {
-            FrmCadastrar f = new FrmCadastrar(presenter)
+            FrmCadastrar f = new FrmCadastrar(Presenter);
+            f.ShowDialog();
+            Atualizar();
         }
     }
 }
