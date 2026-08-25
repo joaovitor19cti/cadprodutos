@@ -25,7 +25,7 @@ namespace cadprodutos.Views.Categorias
         private void btbuscar_Click(object sender, EventArgs e)
         {
             Atualizar();
-        }
+        }/*dsd*/
 
         public void Atualizar()
         {
