@@ -23,8 +23,13 @@ namespace cadprodutos.Views.Categorias
             this.presenter = presenter;
             this.grid = grid;
 
-            lblid.Text = $"#{cat.Id}";
+            lblid.Text = $"#{cat.Id} ({cat.Produtos.Count}" + $"produto {(cat.Produtos.Count == 1 ? "" : "s")}";
             lblnome.Text = cat.Nome;
+
+            if(cat.Produtos.Count > 0)
+            {
+                btexcluir.Enabled = false;
+            }
         }
 
         private void btexcluir_Click(object sender, EventArgs e)

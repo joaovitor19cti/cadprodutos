@@ -63,6 +63,7 @@
             // 
             // flpItens
             // 
+            flpItens.AutoScroll = true;
             flpItens.Location = new Point(12, 41);
             flpItens.Name = "flpItens";
             flpItens.Size = new Size(776, 363);

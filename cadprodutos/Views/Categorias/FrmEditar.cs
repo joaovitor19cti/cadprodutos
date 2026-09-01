@@ -25,14 +25,15 @@ namespace cadprodutos.Views.Categorias
 
             foreach (Produto p in cat.Produtos)
             {
-
+                ProdControl prodControl = new ProdControl(this, p);
+                flpProds.Controls.Add(prodControl);
             }
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
             cat.Nome = txtNome.Text;
-            if(presenter.Editar(cat))
+            if (presenter.Editar(cat))
             {
                 MessageBox.Show("Sucesso!");
                 Close();
@@ -41,6 +42,23 @@ namespace cadprodutos.Views.Categorias
             {
                 MessageBox.Show("Erro!");
             }
+        }
+        public void ExcluirProduto(ProdControl ctrl, Produto prod)
+        {
+            cat.Produtos.Remove(prod);
+            flpProds.Controls.Remove(ctrl);
+        }
+
+        private void btCadastrarProd_Click(object sender, EventArgs e)
+        {
+            Produto p = new Produto()
+            {
+                Nome = "",
+                preco = 0
+            };
+            cat.Produtos.Add(p);
+            flpProds.Controls.Add(new ProdControl(this, p));
+
         }
     }
 }

@@ -72,9 +72,11 @@
             btCadastrarProd.TabIndex = 3;
             btCadastrarProd.Text = "Novo Produto";
             btCadastrarProd.UseVisualStyleBackColor = true;
+            btCadastrarProd.Click += btCadastrarProd_Click;
             // 
             // flpProds
             // 
+            flpProds.AutoScroll = true;
             flpProds.Location = new Point(12, 110);
             flpProds.Name = "flpProds";
             flpProds.Size = new Size(360, 276);
